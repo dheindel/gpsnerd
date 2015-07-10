@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Tracker.Data.Entities.User, Tracker.Data" table="users" lazy="false">
+    <id name="Id" column="Id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="UserName" column="UserName"></property>
+    <property name="FirstName" column="FirstName"></property>
+    <property name="LastName" column="LastName"></property>
+    <property name="Email" column="Email"></property>
+  </class>
+</hibernate-mapping>

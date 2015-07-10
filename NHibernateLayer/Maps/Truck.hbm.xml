@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Tracker.Data.Entities.Truck, Tracker.Data" table="trucks" lazy="false">
+    <id name="Id" column="Id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="IsPrivate" column="IsPrivate"></property>
+    <property name="Name" column="Name"></property>
+    <property name="Type" column="Type"></property>
+    <property name="PlateNumber" column="PlateNumber"></property>
+    <many-to-one name="User" column="UserId" class="Tracker.Data.Entities.User" not-null="true" />
+  </class>
+</hibernate-mapping>

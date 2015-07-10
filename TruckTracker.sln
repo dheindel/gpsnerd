@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "DTOS\Data.csproj", "{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{EAD42611-DE73-4C11-85EE-FF008F19E099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateLayer", "NHibernateLayer\NHibernateLayer.csproj", "{64D738E2-4F87-4990-9E99-D5AE522FB8BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orm", "Orm", "{E0E2D6A6-D66C-4155-AFC3-EDAFD9E4F0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateLayerTests", "NHibernateLayerTests\NHibernateLayerTests.csproj", "{74F47C15-9F67-4A10-B4E8-4F479852B9A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25E34462-AFF7-475E-91E5-1DC38D80BB1E}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		Tracker.vsmdi = Tracker.vsmdi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BA1650EE-8831-4635-B79C-D434714A177D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{526E43D7-6E38-4B7F-BBB2-F90A9FB90139}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{49ADCDBF-09E7-43EC-B9B4-7214C8D17514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckTrackerWeb", "MvcApplication1\TruckTrackerWeb.csproj", "{6E8E35CA-BB26-4D26-9494-2168091ED5A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{BE730246-C498-43AB-B0D6-2BDF29C5BEE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{44B78D66-3C8E-4040-8349-00880149985D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Tracker.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D738E2-4F87-4990-9E99-D5AE522FB8BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D738E2-4F87-4990-9E99-D5AE522FB8BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D738E2-4F87-4990-9E99-D5AE522FB8BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D738E2-4F87-4990-9E99-D5AE522FB8BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F47C15-9F67-4A10-B4E8-4F479852B9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F47C15-9F67-4A10-B4E8-4F479852B9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F47C15-9F67-4A10-B4E8-4F479852B9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F47C15-9F67-4A10-B4E8-4F479852B9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8E35CA-BB26-4D26-9494-2168091ED5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8E35CA-BB26-4D26-9494-2168091ED5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8E35CA-BB26-4D26-9494-2168091ED5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8E35CA-BB26-4D26-9494-2168091ED5A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B78D66-3C8E-4040-8349-00880149985D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B78D66-3C8E-4040-8349-00880149985D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B78D66-3C8E-4040-8349-00880149985D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B78D66-3C8E-4040-8349-00880149985D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0E2D6A6-D66C-4155-AFC3-EDAFD9E4F0AF} = {EAD42611-DE73-4C11-85EE-FF008F19E099}
+		{11296C7E-93A9-4270-ACE4-E55A2BDEE07F} = {EAD42611-DE73-4C11-85EE-FF008F19E099}
+		{64D738E2-4F87-4990-9E99-D5AE522FB8BC} = {E0E2D6A6-D66C-4155-AFC3-EDAFD9E4F0AF}
+		{74F47C15-9F67-4A10-B4E8-4F479852B9A6} = {E0E2D6A6-D66C-4155-AFC3-EDAFD9E4F0AF}
+		{25E34462-AFF7-475E-91E5-1DC38D80BB1E} = {E0E2D6A6-D66C-4155-AFC3-EDAFD9E4F0AF}
+		{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC} = {BA1650EE-8831-4635-B79C-D434714A177D}
+		{49ADCDBF-09E7-43EC-B9B4-7214C8D17514} = {526E43D7-6E38-4B7F-BBB2-F90A9FB90139}
+		{6E8E35CA-BB26-4D26-9494-2168091ED5A9} = {49ADCDBF-09E7-43EC-B9B4-7214C8D17514}
+		{44B78D66-3C8E-4040-8349-00880149985D} = {BE730246-C498-43AB-B0D6-2BDF29C5BEE0}
+	EndGlobalSection
+EndGlobal

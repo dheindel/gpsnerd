@@ -1,0 +1,83 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" Debug="true"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>GPS Nerd - mobile</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+ 	<link type="image/png" href="<%= Url.Content("~/Content/images/author_icon.png") %>" rel="shortcut icon" />
+    <link type="text/css" href="~/Content/css/Mobile.css" rel="Stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="<%= Url.Content("~/Content/scripts/jquery/json2.js") %>"></script>
+</head>
+<body onorientationchange="updateOrientation();">
+ 	
+    <div id="page-wrap">
+        <div id="header">
+		    <% if (Request.IsAuthenticated) { %>
+                <div class="right">
+                    <a class="button red-btn" href="<%= Url.Action("LogOff", "Account") %>">
+                        Log Off
+                    </a>
+                </div>
+            <% } %>
+            <h1>GPS Nerd</h1>
+            <em>Mobile</em>
+            <% if(Session["FullName"]!=null){ %>
+            <p>Welcome <em><%= Html.Encode( Session["FullName"] ) %></em></p>
+            <% } %>
+        </div>
+        <% if(ViewData["HideLogin"]==null){ %>
+            <div id="login">
+		        <% if (!Request.IsAuthenticated) { %>
+				    <% Html.RenderPartial("_Login"); %>
+		        <% } %>
+            </div>
+        <% } %>
+        <div id="content" class="clear">
+            <asp:ContentPlaceHolder id="MainContent" runat="server" />
+        </div>
+
+        <div id="footer" class="clear">
+            <p> 
+				<a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"> 
+					<img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /> 
+				</a>
+			</p>
+            <p> 
+				This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a> 
+			</p>
+            <p>
+                <%= DateTime.Now.Year %> <a href="http://bobcravens.com">Bob Cravens</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).load(function () {
+            updateOrientation();
+        });
+
+        function updateOrientation() {
+            var contentType = "show_";
+            switch (window.orientation) {
+                case 0:
+                    contentType += "normal";
+                    break;
+                case -90:
+                    contentType += "right";
+                    break;
+                case 90:
+                    contentType += "left";
+                    break;
+                case 180:
+                    contentType += "flipped";
+                    break;
+            }
+            document.getElementById("page-wrap").setAttribute("class", contentType);
+        }
+    </script>
+</body>
+</html>

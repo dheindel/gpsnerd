@@ -1,0 +1,610 @@
+/* CSS Reset   
+----------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+ 	
+/* Global Element Styles   
+----------------------------------------------------------*/
+body {
+    font-size: 16px;	
+    font-family: "Georgia", "Lucida Grande", Verdana, Helvetica, Sans-Serif;
+    color: #fff;
+	background: #d1d1d1;
+}
+h1 { font-size: 32px; margin: 0px 0 16px 0; }
+h2 { font-size: 30px; margin: 0px 0 15px 0; }
+h3 { font-size: 28px; margin: 10px 0 3px 0; }
+h4 { font-size: 24px; margin: 10px 0 3px 0; }
+h5 { font-size: 22px; margin: 10px 0 3px 0; }
+h6 { font-size: 20px; margin: 10px 0 3px 0; }
+input
+{
+    font-size: 24px;
+}
+input[type="text"]
+{
+    color: #333;
+    border: solid 2px #ddd;
+}
+input[type="text"]:focus
+{
+    color: #000;
+    border: solid 2px #e89e00;
+}
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.align-center { text-align: center; }
+.width10 { width: 10%; }
+.width20 { width: 20%; }
+.width25 { width: 25%; }
+.width30 { width: 30%; }
+.width40 { width: 40%; }
+.width50 { width: 50%; }
+.width60 { width: 60%; }
+.width70 { width: 70%; }
+.width75 { width: 75%; }
+.width80 { width: 80%; }
+.width90 { width: 90%; }
+
+a
+{
+    color: #006699;
+    text-decoration: none;
+}
+a:hover
+{
+    background-color: #e1e1e1;
+    text-decoration: underline;
+}
+strong
+{
+    font-weight: bold;
+    color: #006699;
+}
+.blacktop
+{
+    /*background: transparent url('../images/road.jpg') repeat 0 0;*/
+    background-color: #000;
+}
+.blue
+{
+    background-color: #006699;
+}
+
+.panel
+{
+    color: #333;
+    background-color: #f1f1f1;
+    line-height: 22px;
+    padding: 20px;
+    margin: 10px 10px 0 10px;
+    overflow: auto;
+}
+.panel strong
+{
+    font-style: italic;
+    color: #000;
+}
+.panel a
+{
+    color: #006699;
+}
+.panel a:hover
+{
+    background-color: #e1e1e1;
+    text-decoration: underline;
+}
+.input-area
+{
+    background-color: #f1f1f1;
+    color: #333 !important;
+    margin: 10px 0;
+    padding: 10px;
+    display: inline-block;
+}
+.input-area h1, .input-area h2, .input-area h3, .input-area h4, .input-area h5, .input-area h6
+{
+    color: #006699;
+}
+.input-row
+{
+    margin-bottom: 10px;
+    text-align: left;
+}
+.input-row label
+{
+    text-align: right;
+    display: inline-block;
+    font-size: 16px;
+    width: 150px;
+}
+.input-row input[type="text"]
+{
+    width: 250px;
+}
+.input-cmds
+{
+    margin: 10px 0;
+}
+
+.image
+{
+    margin: 10px;
+    padding: 5px;
+    background: transparent url('../images/transBlack75.png') repeat 0 0;
+}
+
+/* Truck Tracker Header   
+----------------------------------------------------------*/
+.header 
+{ 
+    border-top: 3px solid #eee;
+    border-bottom: 3px solid #eee;
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+.header span.truck
+{
+    display: inline-block;
+    width: 76px;
+    height: 48px;
+    position: absolute;
+}
+.header span#truck1
+{
+    top: 3px;
+    left: 1000px;
+    background: transparent url('../images/BlueTruck.png') no-repeat 0 0;
+}
+.header span#truck2
+{
+    top: 65px;
+    left: 0px;
+    background: transparent url('../images/OrangeTruck.png') no-repeat 0 0;
+}
+.header h1 
+{ 
+    margin-bottom: 0px;
+    font-size: 32px;
+    padding: 10px 0;
+    border-bottom: 3px dashed #e89e00;
+}
+.header p 
+{ 
+    color: #aaa; 
+    margin: 5px auto;
+    padding: 10px 0;
+    min-height: 28px;
+    width: 900px;
+    text-align: center;
+}
+
+
+/* Modal mask and dialog
+----------------------------------------------------------*/
+#growl-mask
+{
+    background: transparent url('../images/transBlack75.png') repeat 0 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#growl-wrap
+{
+    background-color: #fff;
+    color: #000;
+    min-width: 400px;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#growl-title
+{
+    text-align: center;
+    color: #000;
+}
+#growl-content
+{
+    margin: 10px;
+    border: 1px solid #333;
+    padding: 30px;
+}
+#growl-content p
+{
+    margin-bottom: 10px;
+}
+
+/* Page Wrap and Content Elements   
+----------------------------------------------------------*/
+#wrapper
+{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid #888;
+	background-color: #fff;
+	color: #333;
+	overflow: auto;
+}
+
+/* Home Page   
+----------------------------------------------------------*/ 
+ul.links
+{
+    list-style: none;
+}
+ul.links a
+{
+    background: transparent url('../images/link.png') no-repeat 0 50%;
+    padding-left: 17px;
+}
+ul.linka a:hover
+{
+    background-color: #e1e1e1;
+}
+#home-what ul
+{
+}
+#home-what div.small-col
+{
+    display: inline-block;
+    width: 200px;
+}
+#home-next div#col2
+{
+    padding: 40px;
+}
+
+/* Truck List   
+----------------------------------------------------------*/ 
+#trucks
+{
+	overflow: auto;
+}                                             
+#truck-list  
+{
+	background: transparent url('../images/truck.png') no-repeat -3px 114px;
+	margin: 0 10px 0 0;
+}
+#truck-list h3 
+{ 
+    text-align: center; 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 3px;
+    color: #000;
+}
+#truck-list h3 a
+{
+    float: right;
+    color: #333;
+    text-decoration: none;
+    background-color: #ddd;
+    padding: 0px 3px;
+    border: solid 1px #eee;
+}
+#truck-list h3 a:hover
+{
+    color: #000;
+    border: solid 1px #888;
+}
+
+#truck-list ul 
+{ 
+    background: transparent url('../images/transWhite75.png') repeat 0 0;
+    list-style: none; 
+    overflow: scroll;
+    height: 455px;
+    width: 263px;
+    display: block;
+    border: 1px solid #888;
+}
+#truck-list ul li a 
+{ 
+    text-decoration: none; 
+    color: #222; 
+    width: 97%; 
+    line-height: 32px; 
+    display: inline-block; 
+    padding: 0 0 0 3px;
+    border: 1px dotted transparent;
+}
+#truck-list ul li a:hover 
+{ 
+    background-color: #d1d1d1; 
+    color: #000;
+}
+#truck-list ul li a.selected
+{
+    color: #006699;
+    background-color: #e1e1e1;
+    font-weight: bold;
+    border: 1px dotted #888;
+}
+
+/* Map Area  
+----------------------------------------------------------*/
+#map_canvas 
+{ 
+    width: 563px; 
+    height: 500px; 
+    margin: 0 auto;
+    border: 1px solid #888;
+}
+
+.popup,
+.popup h1
+{ 
+    color: #333; 
+}
+.popup-label 
+{ 
+    font-weight: bold; 
+}
+
+/* Footer Area  
+----------------------------------------------------------*/
+#footer
+{
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 10px 0 0 0;
+}
+
+#footer div.left a,
+#footer div.right a
+{
+    background: transparent url('../images/link.png') no-repeat 0 50%;
+    padding-left: 17px;
+}
+#footer div.left a:hover,
+#footer div.right a:hover
+{
+    background-color: #e1e1e1;
+}
+
+#footer div.left
+{
+    width: 40%;
+    text-align: left;
+}
+#footer div.left div#col1
+{
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+#footer div.left div#col2
+{
+    display: inline-block;
+    width: 50%;
+}
+#footer div.left ul
+{
+    list-style: none;
+    margin: 10px 0;
+}
+
+#footer div.right
+{
+    width: 55%;
+    text-align: left;
+}
+#footer div.right h6
+{
+    text-decoration: underline;
+    font-size: 16px;
+}
+#footer div.right ul
+{
+    list-style: none;
+}
+#footer div.right a
+{
+    display: block;
+    margin: 5px 0 ;
+}
+
+/* OpenId
+----------------------------------------------------------*/
+#openid-wrap p
+{
+    font-size: 18px;
+    text-align: center;
+    margin: 0 120px 10px;
+    line-height: 24px;
+}
+#openid-wrap div#other
+{
+    display: none;
+    text-align: center;
+    margin: 10px 40px;
+    padding: 10px;
+    color: #000;
+    background-color: #ddd;
+    border: 1px solid #888;
+    font-size: 18px;
+}
+#openid-wrap div#other h3
+{
+    color: #333;
+    font-weight: bold;
+    margin: 0 0 3px 0;
+}
+#openid-wrap input
+{
+    border: 2px solid #fba424;
+    height: 36px;
+    width: 500px;
+}
+#openid-wrap div#other a
+{
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #666;
+    padding: 10px 15px;
+    display: inline-block;
+}
+#openid-wrap div#other a:hover
+{
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+#openid-providers
+{
+    overflow: auto;
+    text-align: center;
+}
+#openid-providers ul
+{
+    display: inline-block;
+    list-style: none;
+}
+#openid-providers li
+{
+    margin: 8px;
+    padding: 0;
+    float: left;
+    width: 150px;
+    height: 50px;
+    background: transparent url('../images/openid_sprite.png') no-repeat 0 0;
+}
+li#openid       { background-position: 0 0; }
+li#myopenid     { background-position: 0 -50px; }
+li#twitter      { background-position: 0 -100px; }
+li#facebook     { background-position: 0 -150px; }
+li#google       { background-position: 0 -200px; }
+li#yahoo        { background-position: 0 -250px; }
+li#openid:hover       { background-position: -150px 0; cursor: pointer; }
+li#myopenid:hover     { background-position: -150px -50px; cursor: pointer; }
+li#twitter:hover      { background-position: -150px -100px; cursor: pointer; }
+li#facebook:hover     { background-position: -150px -150px; cursor: pointer; }
+li#google:hover       { background-position: -150px -200px; cursor: pointer; }
+li#yahoo:hover        { background-position: -150px -250px; cursor: pointer; }
+
+
+/* Create User
+----------------------------------------------------------*/
+#create-wrap
+{
+    text-align: center;
+}
+/* User Panel
+----------------------------------------------------------*/
+#user-panel-wrap
+{
+    padding: 10px;
+    color: #fff;
+    overflow: auto;
+}
+#user-panel-wrap ul
+{
+    display: inline-block;
+    list-style: none;
+}
+#user-panel-wrap ul li
+{
+    float: right;
+    margin: 3px 5px;
+}
+#user-panel-wrap ul li a
+{
+    padding: 5px 3px;
+    background-color: #333;
+    border: 1px solid #333;
+    color: #ddd;
+}
+#user-panel-wrap ul li a:hover
+{
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #333;
+    text-decoration: none;
+}
+#user-panel-wrap ul li a#manage-truck
+{
+    display: none;
+}
+
+
+/* Add Truck  
+----------------------------------------------------------*/
+#add-truck
+{
+    overflow: auto;
+    text-align: center;
+}
+#add-truck div#map-area
+{
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Manage Truck  
+----------------------------------------------------------*/
+#update-truck,
+#upload-gps-file
+{
+    overflow: auto;
+    text-align: center;
+}
+
+
+/* Fake Data  
+----------------------------------------------------------*/
+#fake-data #mapStart 
+{ 
+    width: 563px; 
+    height: 500px; 
+    margin: 0 auto;
+    border: 1px solid #888;
+}
+#fake-data #mapEnd 
+{ 
+    width: 563px; 
+    height: 500px; 
+    margin: 0 auto;
+    border: 1px solid #888;
+}
+
+#fake-data p
+{
+    margin: 0 0 10px 0;
+}
+
+#fake-data input[type='text']
+{
+    width: 450px;
+}

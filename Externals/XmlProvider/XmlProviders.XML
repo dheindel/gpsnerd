@@ -1,0 +1,1032 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmlProviders</name>
+    </assembly>
+    <members>
+        <member name="T:XmlProviders.XmlRoleProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+            <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+            <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"></see> on a provider after the provider has already been initialized.</exception>
+            <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.AddUsersToRoles(System.String[],System.String[])">
+            <summary>
+            Adds the specified user names to the specified roles for the configured applicationName.
+            </summary>
+            <param name="usernames">A string array of user names to be added to the specified roles.</param>
+            <param name="roleNames">A string array of the role names to add the specified user names to.</param>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.CreateRole(System.String)">
+            <summary>
+            Adds a new role to the data source for the configured applicationName.
+            </summary>
+            <param name="roleName">The name of the role to create.</param>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.DeleteRole(System.String,System.Boolean)">
+            <summary>
+            Removes a role from the data source for the configured applicationName.
+            </summary>
+            <param name="roleName">The name of the role to delete.</param>
+            <param name="throwOnPopulatedRole">If true, throw an exception if roleName has one or more members and do not delete roleName.</param>
+            <returns>
+            true if the role was successfully deleted; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.FindUsersInRole(System.String,System.String)">
+            <summary>
+            Gets an array of user names in a role where the user name contains the specified user name to match.
+            </summary>
+            <param name="roleName">The role to search in.</param>
+            <param name="usernameToMatch">The user name to search for.</param>
+            <returns>
+            A string array containing the names of all the users where the user name matches usernameToMatch and the user is a member of the specified role.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.GetAllRoles">
+            <summary>
+            Gets a list of all the roles for the configured applicationName.
+            </summary>
+            <returns>
+            A string array containing the names of all the roles stored in the data source for the configured applicationName.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.GetRolesForUser(System.String)">
+            <summary>
+            Gets a list of the roles that a specified user is in for the configured applicationName.
+            </summary>
+            <param name="username">The user to return a list of roles for.</param>
+            <returns>
+            A string array containing the names of all the roles that the specified user is in for the configured applicationName.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.GetUsersInRole(System.String)">
+            <summary>
+            Gets a list of users in the specified role for the configured applicationName.
+            </summary>
+            <param name="roleName">The name of the role to get the list of users for.</param>
+            <returns>
+            A string array containing the names of all the users who are members of the specified role for the configured applicationName.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.IsUserInRole(System.String,System.String)">
+            <summary>
+            Gets a value indicating whether the specified user is in the specified role for the configured applicationName.
+            </summary>
+            <param name="username">The user name to search for.</param>
+            <param name="roleName">The role to search in.</param>
+            <returns>
+            true if the specified user is in the specified role for the configured applicationName; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])">
+            <summary>
+            Removes the specified user names from the specified roles for the configured applicationName.
+            </summary>
+            <param name="usernames">A string array of user names to be removed from the specified roles.</param>
+            <param name="roleNames">A string array of role names to remove the specified user names from.</param>
+        </member>
+        <member name="M:XmlProviders.XmlRoleProvider.RoleExists(System.String)">
+            <summary>
+            Gets a value indicating whether the specified role name already exists in the role data source for the configured applicationName.
+            </summary>
+            <param name="roleName">The name of the role to search for in the data source.</param>
+            <returns>
+            true if the role name already exists in the data source for the configured applicationName; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:XmlProviders.XmlRoleProvider.DataStorePath">
+            <summary>
+            Gets or sets the data store path.
+            </summary>
+            <value>The data store path.</value>
+        </member>
+        <member name="P:XmlProviders.XmlRoleProvider.ApplicationName">
+            <summary>
+            Gets or sets the name of the application to store and retrieve role information for.
+            </summary>
+            <value></value>
+            <returns>The name of the application to store and retrieve role information for.</returns>
+        </member>
+        <member name="T:XmlProviders.Data.ProfileCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.ProfileCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileCollection.Load(System.String)">
+            <summary>
+            Loads the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileCollection.Save(System.String)">
+            <summary>
+            Saves the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileCollection.FindByUserName(System.String,System.Web.Profile.ProfileAuthenticationOption)">
+            <summary>
+            Finds the name of the by user.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="authenticationType">Type of the authentication.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileCollection.CreateProfileInfoCollection(System.Web.Profile.ProfileAuthenticationOption)">
+            <summary>
+            Creates the profile info collection.
+            </summary>
+            <param name="authenticationOption">The authentication option.</param>
+            <returns></returns>
+        </member>
+        <member name="T:XmlProviders.Data.RoleCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.RoleCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.RoleCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.RoleCollection.Load(System.String)">
+            <summary>
+            Loads the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.RoleCollection.Save(System.String)">
+            <summary>
+            Saves the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:XmlProviders.Data.RoleCollection.FindByName(System.String)">
+            <summary>
+            Finds the name of the by.
+            </summary>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="T:XmlProviders.Data.ProfilePropertyCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.ProfilePropertyCollection.ContainsKey(System.String)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+            	<c>true</c> if the specified key contains key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:XmlProviders.Data.ProfilePropertyCollection.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:XmlProviders.Data.ProfileProperty"/> with the specified key.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:XmlProviders.XmlProfileProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+            <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+            <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"></see> on a provider after the provider has already been initialized.</exception>
+            <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.DeleteInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)">
+            <summary>
+            When overridden in a derived class, deletes all user-profile data for profiles in which the last activity date occurred before the specified date.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are deleted.</param>
+            <param name="userInactiveSinceDate">A <see cref="T:System.DateTime"></see> that identifies which user profiles are considered inactive. If the <see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate"></see>  value of a user profile occurs on or before this date and time, the profile is considered inactive.</param>
+            <returns>
+            The number of profiles deleted from the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.DeleteProfiles(System.String[])">
+            <summary>
+            When overridden in a derived class, deletes profile properties and information for profiles that match the supplied list of user names.
+            </summary>
+            <param name="usernames">A string array of user names for profiles to be deleted.</param>
+            <returns>
+            The number of profiles deleted from the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.DeleteProfiles(System.Web.Profile.ProfileInfoCollection)">
+            <summary>
+            When overridden in a derived class, deletes profile properties and information for the supplied list of profiles.
+            </summary>
+            <param name="profiles">A <see cref="T:System.Web.Profile.ProfileInfoCollection"></see>  of information about profiles that are to be deleted.</param>
+            <returns>
+            The number of profiles deleted from the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.FindInactiveProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            When overridden in a derived class, retrieves profile information for profiles in which the last activity date occurred on or before the specified date and the user name matches the specified user name.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are returned.</param>
+            <param name="usernameToMatch">The user name to search for.</param>
+            <param name="userInactiveSinceDate">A <see cref="T:System.DateTime"></see> that identifies which user profiles are considered inactive. If the <see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate"></see> value of a user profile occurs on or before this date and time, the profile is considered inactive.</param>
+            <param name="pageIndex">The index of the page of results to return.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">When this method returns, contains the total number of profiles.</param>
+            <returns>
+            A <see cref="T:System.Web.Profile.ProfileInfoCollection"></see> containing user profile information for inactive profiles where the user name matches the supplied usernameToMatch parameter.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.FindProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            When overridden in a derived class, retrieves profile information for profiles in which the user name matches the specified user names.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are returned.</param>
+            <param name="usernameToMatch">The user name to search for.</param>
+            <param name="pageIndex">The index of the page of results to return.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">When this method returns, contains the total number of profiles.</param>
+            <returns>
+            A <see cref="T:System.Web.Profile.ProfileInfoCollection"></see> containing user-profile information for profiles where the user name matches the supplied usernameToMatch parameter.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.GetAllInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            When overridden in a derived class, retrieves user-profile data from the data source for profiles in which the last activity date occurred on or before the specified date.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are returned.</param>
+            <param name="userInactiveSinceDate">A <see cref="T:System.DateTime"></see> that identifies which user profiles are considered inactive. If the <see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate"></see>  of a user profile occurs on or before this date and time, the profile is considered inactive.</param>
+            <param name="pageIndex">The index of the page of results to return.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">When this method returns, contains the total number of profiles.</param>
+            <returns>
+            A <see cref="T:System.Web.Profile.ProfileInfoCollection"></see> containing user-profile information about the inactive profiles.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.GetAllProfiles(System.Web.Profile.ProfileAuthenticationOption,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            When overridden in a derived class, retrieves user profile data for all profiles in the data source.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are returned.</param>
+            <param name="pageIndex">The index of the page of results to return.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">When this method returns, contains the total number of profiles.</param>
+            <returns>
+            A <see cref="T:System.Web.Profile.ProfileInfoCollection"></see> containing user-profile information for all profiles in the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.GetNumberOfInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)">
+            <summary>
+            When overridden in a derived class, returns the number of profiles in which the last activity date occurred on or before the specified date.
+            </summary>
+            <param name="authenticationOption">One of the <see cref="T:System.Web.Profile.ProfileAuthenticationOption"></see> values, specifying whether anonymous, authenticated, or both types of profiles are returned.</param>
+            <param name="userInactiveSinceDate">A <see cref="T:System.DateTime"></see> that identifies which user profiles are considered inactive. If the <see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate"></see>  of a user profile occurs on or before this date and time, the profile is considered inactive.</param>
+            <returns>
+            The number of profiles in which the last activity date occurred on or before the specified date.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)">
+            <summary>
+            Returns the collection of settings property values for the specified application instance and settings property group.
+            </summary>
+            <param name="context">A <see cref="T:System.Configuration.SettingsContext"></see> describing the current application use.</param>
+            <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyCollection"></see> containing the settings property group whose values are to be retrieved.</param>
+            <returns>
+            A <see cref="T:System.Configuration.SettingsPropertyValueCollection"></see> containing the values for the specified settings property group.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlProfileProvider.SetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyValueCollection)">
+            <summary>
+            Sets the values of the specified group of property settings.
+            </summary>
+            <param name="context">A <see cref="T:System.Configuration.SettingsContext"></see> describing the current application usage.</param>
+            <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyValueCollection"></see> representing the group of property settings to set.</param>
+        </member>
+        <member name="P:XmlProviders.XmlProfileProvider.DataStorePath">
+            <summary>
+            Gets or sets the data store path.
+            </summary>
+            <value>The data store path.</value>
+        </member>
+        <member name="P:XmlProviders.XmlProfileProvider.ApplicationName">
+            <summary>
+            Gets or sets the name of the currently running application.
+            </summary>
+            <value></value>
+            <returns>A <see cref="T:System.String"></see> that contains the application's shortened name, which does not contain a full path or extension, for example, SimpleAppSettings.</returns>
+        </member>
+        <member name="T:XmlProviders.Data.UserCollection">
+            <summary>
+            Contains a collection of <see cref="T:XmlProviders.Data.User"/>
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.UserCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.Load(System.String)">
+            <summary>
+            Loads the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.Save(System.String)">
+            <summary>
+            Saves the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.FindByUserName(System.String)">
+            <summary>
+            Finds the name of the by user.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.FindByEmail(System.String)">
+            <summary>
+            Finds the by email.
+            </summary>
+            <param name="email">The email.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.FindByKey(System.Guid)">
+            <summary>
+            Finds the by key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.UserCollection.FindAllActiveUsers">
+            <summary>
+            Finds all active users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XmlProviders.Data.WorkspaceCollection">
+            <summary>
+            Contains methods and properties to persist and retrieve user personalization data.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.WorkspaceCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.Load(System.String)">
+            <summary>
+            Loads the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.Save(System.String)">
+            <summary>
+            Saves the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.FindByUserAndPath(System.String,System.String)">
+            <summary>
+            Finds the by user and path.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="path">The path.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.FindByPath(System.String)">
+            <summary>
+            Finds the by path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlProviders.Data.WorkspaceCollection.FindByUserName(System.String)">
+            <summary>
+            Finds the name of the by user.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <returns></returns>
+        </member>
+        <member name="P:XmlProviders.Data.WorkspaceCollection.SharedPersonalizationBlob">
+            <summary>
+            Gets or sets the shared personalization BLOB.
+            </summary>
+            <value>The shared personalization BLOB.</value>
+        </member>
+        <member name="P:XmlProviders.Data.WorkspaceCollection.Item(System.Int32)">
+            <summary>
+            Returns a user's workspace for a given index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XmlProviders.Data.WorkspaceCollection.Workspaces">
+            <summary>
+            Returns the collection of user workspaces.
+            </summary>
+        </member>
+        <member name="T:XmlProviders.XmlPersonalizationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+            <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+            <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"></see> on a provider after the provider has already been initialized.</exception>
+            <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.FindState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Web.UI.WebControls.WebParts.PersonalizationStateQuery,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            When overridden in a derived class, returns a collection containing zero or more <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo"></see>-derived objects based on scope and specific query parameters.
+            </summary>
+            <param name="scope">A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope"></see> with the personalization information to be queried. This value cannot be null.</param>
+            <param name="query">A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery"></see> containing a query. This value can be null.</param>
+            <param name="pageIndex">The location where the query starts.</param>
+            <param name="pageSize">The number of records to return.</param>
+            <param name="totalRecords">The total number of records available.</param>
+            <returns>
+            A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection"></see> containing zero or more <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo"></see>-derived objects.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Web.UI.WebControls.WebParts.PersonalizationStateQuery)">
+            <summary>
+            When overridden in a derived class, returns the number of rows in the underlying data store that exist within the specified scope.
+            </summary>
+            <param name="scope">A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope"></see> of the personalization information to be queried. This value cannot be null.</param>
+            <param name="query">A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery"></see> containing a query. This value can be null.</param>
+            <returns>
+            The number of rows in the underlying data store that exist for the specified scope parameter.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.LoadPersonalizationBlobs(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            When overridden in a derived class, loads raw personalization data from the underlying data store.
+            </summary>
+            <param name="webPartManager">The <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager"></see> managing the personalization data.</param>
+            <param name="path">The path for personalization information to be used as the retrieval key.</param>
+            <param name="userName">The user name for personalization information to be used as the retrieval key.</param>
+            <param name="sharedDataBlob">The returned data for the <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared"></see> scope.</param>
+            <param name="userDataBlob">The returned data for the <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User"></see> scope.</param>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.ResetPersonalizationBlob(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String)">
+            <summary>
+            When overridden in a derived class, deletes raw personalization data from the underlying data store.
+            </summary>
+            <param name="webPartManager">The <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager"></see> managing the personalization data.</param>
+            <param name="path">The path for personalization information to be used as the data store key.</param>
+            <param name="userName">The user name for personalization information to be used as the data store key.</param>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.ResetState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.String[],System.String[])">
+            <summary>
+            When overridden in a derived class, deletes personalization state from the underlying data store based on the specified parameters.
+            </summary>
+            <param name="scope">A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope"></see> of the personalization information to be reset. This value cannot be null.</param>
+            <param name="paths">The paths for personalization information to be deleted.</param>
+            <param name="usernames">The user names for personalization information to be deleted.</param>
+            <returns>The number of rows deleted.</returns>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.ResetUserState(System.String,System.DateTime)">
+            <summary>
+            When overridden in a derived class, deletes Web Parts personalization data from the underlying data store based on the specified parameters.
+            </summary>
+            <param name="path">The path of the personalization data to be deleted. This value can be null but cannot be an empty string ("").</param>
+            <param name="userInactiveSinceDate">The date indicating the last time a Web site user changed personalization data.</param>
+            <returns>
+            The number of rows deleted from the underlying data store.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlPersonalizationProvider.SavePersonalizationBlob(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String,System.Byte[])">
+            <summary>
+            When overridden in a derived class, saves raw personalization data to the underlying data store.
+            </summary>
+            <param name="webPartManager">The <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager"></see> managing the personalization data.</param>
+            <param name="path">The path for personalization information to be used as the data store key.</param>
+            <param name="userName">The user name for personalization information to be used as the key.</param>
+            <param name="dataBlob">The byte array of data to be saved.</param>
+        </member>
+        <member name="P:XmlProviders.XmlPersonalizationProvider.DataStorePath">
+            <summary>
+            Gets or sets the data store path.
+            </summary>
+            <value>The data store path.</value>
+        </member>
+        <member name="P:XmlProviders.XmlPersonalizationProvider.ApplicationName">
+            <summary>
+            When overridden in a derived class, gets or sets the name of the application configured for the provider.
+            </summary>
+            <value></value>
+            <returns>The application configured for the personalization provider.</returns>
+        </member>
+        <member name="T:XmlProviders.Data.Workspace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XmlProviders.Data.Workspace.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Workspace.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+            <value>The path.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Workspace.PersonalizationBlob">
+            <summary>
+            Gets or sets the personalization BLOB.
+            </summary>
+            <value>The personalization BLOB.</value>
+        </member>
+        <member name="T:XmlProviders.Data.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XmlProviders.Data.User.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.IsLocked">
+            <summary>
+            Gets or sets a value indicating whether this instance is locked.
+            </summary>
+            <value><c>true</c> if this instance is locked; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.ChallengeQuestion">
+            <summary>
+            Gets or sets the challenge question.
+            </summary>
+            <value>The challenge question.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.ChallengeAnswer">
+            <summary>
+            Gets or sets the challenge answer.
+            </summary>
+            <value>The challenge answer.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.LastLoggedIn">
+            <summary>
+            Gets or sets the last logged in.
+            </summary>
+            <value>The last logged in.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.LastActivity">
+            <summary>
+            Gets or sets the last activity.
+            </summary>
+            <value>The last activity.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.LastPasswordChange">
+            <summary>
+            Gets or sets the last password change.
+            </summary>
+            <value>The last password change.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.LastLockedOut">
+            <summary>
+            Gets or sets the last locked out.
+            </summary>
+            <value>The last locked out.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.CreatedOn">
+            <summary>
+            Gets or sets the created on.
+            </summary>
+            <value>The created on.</value>
+        </member>
+        <member name="P:XmlProviders.Data.User.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>true</c> if this instance is active; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:XmlProviders.XmlMembershipProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+            <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+            <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"></see> on a provider after the provider has already been initialized.</exception>
+            <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.ChangePassword(System.String,System.String,System.String)">
+            <summary>
+            Processes a request to update the password for a membership user.
+            </summary>
+            <param name="username">The user to update the password for.</param>
+            <param name="oldPassword">The current password for the specified user.</param>
+            <param name="newPassword">The new password for the specified user.</param>
+            <returns>
+            true if the password was updated successfully; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+            <summary>
+            Processes a request to update the password question and answer for a membership user.
+            </summary>
+            <param name="username">The user to change the password question and answer for.</param>
+            <param name="password">The password for the specified user.</param>
+            <param name="newPasswordQuestion">The new password question for the specified user.</param>
+            <param name="newPasswordAnswer">The new password answer for the specified user.</param>
+            <returns>
+            true if the password question and answer are updated successfully; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+            <summary>
+            Adds a new membership user to the data source.
+            </summary>
+            <param name="username">The user name for the new user.</param>
+            <param name="password">The password for the new user.</param>
+            <param name="email">The e-mail address for the new user.</param>
+            <param name="passwordQuestion">The password question for the new user.</param>
+            <param name="passwordAnswer">The password answer for the new user</param>
+            <param name="isApproved">Whether or not the new user is approved to be validated.</param>
+            <param name="providerUserKey">The unique identifier from the membership data source for the user.</param>
+            <param name="status">A <see cref="T:System.Web.Security.MembershipCreateStatus"></see> enumeration value indicating whether the user was created successfully.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUser"></see> object populated with the information for the newly created user.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.DeleteUser(System.String,System.Boolean)">
+            <summary>
+            Removes a user from the membership data source.
+            </summary>
+            <param name="username">The name of the user to delete.</param>
+            <param name="deleteAllRelatedData">true to delete data related to the user from the database; false to leave data related to the user in the database.</param>
+            <returns>
+            true if the user was successfully deleted; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Gets a collection of membership users where the e-mail address contains the specified e-mail address to match.
+            </summary>
+            <param name="emailToMatch">The e-mail address to search for.</param>
+            <param name="pageIndex">The index of the page of results to return. pageIndex is zero-based.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">The total number of matched users.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUserCollection"></see> collection that contains a page of pageSize<see cref="T:System.Web.Security.MembershipUser"></see> objects beginning at the page specified by pageIndex.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Gets a collection of membership users where the user name contains the specified user name to match.
+            </summary>
+            <param name="usernameToMatch">The user name to search for.</param>
+            <param name="pageIndex">The index of the page of results to return. pageIndex is zero-based.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">The total number of matched users.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUserCollection"></see> collection that contains a page of pageSize<see cref="T:System.Web.Security.MembershipUser"></see> objects beginning at the page specified by pageIndex.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Gets a collection of all the users in the data source in pages of data.
+            </summary>
+            <param name="pageIndex">The index of the page of results to return. pageIndex is zero-based.</param>
+            <param name="pageSize">The size of the page of results to return.</param>
+            <param name="totalRecords">The total number of matched users.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUserCollection"></see> collection that contains a page of pageSize<see cref="T:System.Web.Security.MembershipUser"></see> objects beginning at the page specified by pageIndex.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetNumberOfUsersOnline">
+            <summary>
+            Gets the number of users currently accessing the application.
+            </summary>
+            <returns>
+            The number of users currently accessing the application.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetPassword(System.String,System.String)">
+            <summary>
+            Gets the password for the specified user name from the data source.
+            </summary>
+            <param name="username">The user to retrieve the password for.</param>
+            <param name="answer">The password answer for the user.</param>
+            <returns>
+            The password for the specified user name.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetUser(System.String,System.Boolean)">
+            <summary>
+            Gets information from the data source for a user. Provides an option to update the last-activity date/time stamp for the user.
+            </summary>
+            <param name="username">The name of the user to get information for.</param>
+            <param name="userIsOnline">true to update the last-activity date/time stamp for the user; false to return user information without updating the last-activity date/time stamp for the user.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUser"></see> object populated with the specified user's information from the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetUser(System.Object,System.Boolean)">
+            <summary>
+            Gets user information from the data source based on the unique identifier for the membership user. Provides an option to update the last-activity date/time stamp for the user.
+            </summary>
+            <param name="providerUserKey">The unique identifier for the membership user to get information for.</param>
+            <param name="userIsOnline">true to update the last-activity date/time stamp for the user; false to return user information without updating the last-activity date/time stamp for the user.</param>
+            <returns>
+            A <see cref="T:System.Web.Security.MembershipUser"></see> object populated with the specified user's information from the data source.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.GetUserNameByEmail(System.String)">
+            <summary>
+            Gets the user name associated with the specified e-mail address.
+            </summary>
+            <param name="email">The e-mail address to search for.</param>
+            <returns>
+            The user name associated with the specified e-mail address. If no match is found, return null.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.ResetPassword(System.String,System.String)">
+            <summary>
+            Resets a user's password to a new, automatically generated password.
+            </summary>
+            <param name="username">The user to reset the password for.</param>
+            <param name="answer">The password answer for the specified user.</param>
+            <returns>The new password for the specified user.</returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.UnlockUser(System.String)">
+            <summary>
+            Clears a lock so that the membership user can be validated.
+            </summary>
+            <param name="userName">The membership user whose lock status you want to clear.</param>
+            <returns>
+            true if the membership user was successfully unlocked; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)">
+            <summary>
+            Updates information about a user in the data source.
+            </summary>
+            <param name="user">A <see cref="T:System.Web.Security.MembershipUser"></see> object that represents the user to update and the updated information for the user.</param>
+        </member>
+        <member name="M:XmlProviders.XmlMembershipProvider.ValidateUser(System.String,System.String)">
+            <summary>
+            Verifies that the specified user name and password exist in the data source.
+            </summary>
+            <param name="username">The name of the user to validate.</param>
+            <param name="password">The password for the specified user.</param>
+            <returns>
+            true if the specified username and password are valid; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.DataStorePath">
+            <summary>
+            Gets or sets the data store path.
+            </summary>
+            <value>The data store path.</value>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.ApplicationName">
+            <summary>
+            The name of the application using the custom membership provider.
+            </summary>
+            <value></value>
+            <returns>The name of the application using the custom membership provider.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.EnablePasswordReset">
+            <summary>
+            Indicates whether the membership provider is configured to allow users to reset their passwords.
+            </summary>
+            <value></value>
+            <returns>true if the membership provider supports password reset; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.EnablePasswordRetrieval">
+            <summary>
+            Indicates whether the membership provider is configured to allow users to retrieve their passwords.
+            </summary>
+            <value></value>
+            <returns>true if the membership provider is configured to support password retrieval; otherwise, false. The default is false.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.MaxInvalidPasswordAttempts">
+            <summary>
+            Gets the number of invalid password or password-answer attempts allowed before the membership user is locked out.
+            </summary>
+            <value></value>
+            <returns>The number of invalid password or password-answer attempts allowed before the membership user is locked out.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.MinRequiredNonAlphanumericCharacters">
+            <summary>
+            Gets the minimum number of special characters that must be present in a valid password.
+            </summary>
+            <value></value>
+            <returns>The minimum number of special characters that must be present in a valid password.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.MinRequiredPasswordLength">
+            <summary>
+            Gets the minimum length required for a password.
+            </summary>
+            <value></value>
+            <returns>The minimum length required for a password. </returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.PasswordAttemptWindow">
+            <summary>
+            Gets the number of minutes in which a maximum number of invalid password or password-answer attempts are allowed before the membership user is locked out.
+            </summary>
+            <value></value>
+            <returns>The number of minutes in which a maximum number of invalid password or password-answer attempts are allowed before the membership user is locked out.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.PasswordFormat">
+            <summary>
+            Gets a value indicating the format for storing passwords in the membership data store.
+            </summary>
+            <value></value>
+            <returns>One of the <see cref="T:System.Web.Security.MembershipPasswordFormat"></see> values indicating the format for storing passwords in the data store.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.PasswordStrengthRegularExpression">
+            <summary>
+            Gets the regular expression used to evaluate a password.
+            </summary>
+            <value></value>
+            <returns>A regular expression used to evaluate a password.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.RequiresQuestionAndAnswer">
+            <summary>
+            Gets a value indicating whether the membership provider is configured to require the user to answer a password question for password reset and retrieval.
+            </summary>
+            <value></value>
+            <returns>true if a password answer is required for password reset and retrieval; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="P:XmlProviders.XmlMembershipProvider.RequiresUniqueEmail">
+            <summary>
+            Gets a value indicating whether the membership provider is configured to require a unique e-mail address for each user name.
+            </summary>
+            <value></value>
+            <returns>true if the membership provider requires a unique e-mail address; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="T:XmlProviders.Data.ProfileProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileProperty.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.ProfileProperty"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.ProfileProperty.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.ProfileProperty"/> class.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="P:XmlProviders.Data.ProfileProperty.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:XmlProviders.Data.ProfileProperty.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:XmlProviders.Data.Profile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.Profile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.Profile"/> class.
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.Profile.CreateProfileInfo">
+            <summary>
+            Creates the profile info.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.IsAnonymous">
+            <summary>
+            Gets or sets a value indicating whether this instance is anonymous.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is anonymous; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.LastActivityDate">
+            <summary>
+            Gets or sets the last activity date.
+            </summary>
+            <value>The last activity date.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.LastUpdatedDate">
+            <summary>
+            Gets or sets the last updated date.
+            </summary>
+            <value>The last updated date.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.Properties">
+            <summary>
+            Gets the properties.
+            </summary>
+            <value>The properties.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Profile.Size">
+            <summary>
+            Gets the size.
+            </summary>
+            <value>The size.</value>
+        </member>
+        <member name="T:XmlProviders.Data.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XmlProviders.Data.Role.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmlProviders.Data.Role"/> class.
+            </summary>
+        </member>
+        <member name="P:XmlProviders.Data.Role.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:XmlProviders.Data.Role.Users">
+            <summary>
+            Gets the users.
+            </summary>
+            <value>The users.</value>
+        </member>
+    </members>
+</doc>

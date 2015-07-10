@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E8E35CA-BB26-4D26-9494-2168091ED5A9}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TruckTrackerWeb</RootNamespace>
+    <AssemblyName>TruckTrackerWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\Externals\DotNetOpenAuth\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\3rdPartyLibs\NHibernate\version_2_1_2\Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.2.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyLibs\MySql\version_6_2_3\MySql.Data\Provider\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\NHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.1.0.1001, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\Externals\AppStarter\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\Externals\MvcStarter\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\MobileCapableWebFormViewEngine.cs" />
+    <Compile Include="Code\FormsAuthenticationService.cs" />
+    <Compile Include="Code\TwitterConsumer.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Code\JsonLocationPoint.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="Code\TripSessions.cs" />
+    <Compile Include="Code\TripSession.cs" />
+    <Compile Include="Controllers\TruckController.cs" />
+    <Compile Include="Controllers\FakeDataController.cs" />
+    <Compile Include="Code\Gps\GprmcParser.cs" />
+    <Compile Include="Code\Gps\GpsPoint.cs" />
+    <Compile Include="Code\Gps\GpsFileHelper.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Helpers\LoginHelpers.cs" />
+    <Compile Include="Models\JsonLocation.cs" />
+    <Compile Include="Models\JsonMapper.cs" />
+    <Compile Include="Models\JsonTruckInfo.cs" />
+    <Compile Include="Models\NewTruckInfo.cs" />
+    <Compile Include="NinjectFramework\Bootstrapper.cs" />
+    <Compile Include="NinjectFramework\MyMonitorActivationStrategy.cs" />
+    <Compile Include="NinjectFramework\NinjectWebsiteApplication.cs" />
+    <Compile Include="NinjectFramework\AppModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Devices\readme.txt" />
+    <Content Include="Content\css\growl.css" />
+    <Content Include="Content\css\Mobile.css" />
+    <Content Include="Content\images\AddTruck.jpg" />
+    <Content Include="Content\images\author_icon.png" />
+    <Content Include="Content\images\BlueTruck.png" />
+    <Content Include="Content\images\EditTruck.jpg" />
+    <Content Include="Content\images\link.png" />
+    <Content Include="Content\images\Map.jpg" />
+    <Content Include="Content\images\openid_sprite.png" />
+    <Content Include="Content\images\OrangeTruck.png" />
+    <Content Include="Content\images\road.jpg" />
+    <Content Include="Content\images\trans50.png" />
+    <Content Include="Content\images\trans50White.png" />
+    <Content Include="Content\images\trans80.png" />
+    <Content Include="Content\images\trans80White.png" />
+    <Content Include="Content\images\transBlack25.png" />
+    <Content Include="Content\images\transBlack50.png" />
+    <Content Include="Content\images\transBlack75.png" />
+    <Content Include="Content\images\transRed25.png" />
+    <Content Include="Content\images\transRed50.png" />
+    <Content Include="Content\images\transRed75.png" />
+    <Content Include="Content\images\transWhite25.png" />
+    <Content Include="Content\images\transWhite50.png" />
+    <Content Include="Content\images\transWhite75.png" />
+    <Content Include="Content\images\truck.png" />
+    <Content Include="Content\scripts\growl.js" />
+    <Content Include="Content\scripts\jquery\json2.js" />
+    <Content Include="Content\scripts\truckanimations.js" />
+    <Content Include="Content\scripts\trucktracker.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\scripts\jquery.gmap3.js" />
+    <Content Include="Views\Account\CreateUser.aspx" />
+    <Content Include="Views\Account\LogIn.aspx" />
+    <Content Include="Views\Home\Mobile\Index.aspx" />
+    <Content Include="Views\Mobile\Trip.aspx" />
+    <Content Include="Views\Truck\AddTruck.aspx" />
+    <Content Include="Views\Truck\Index.aspx" />
+    <Content Include="Views\Truck\ManageTruck.aspx" />
+    <Content Include="Views\FakeData\Index.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\_UserPanel.ascx" />
+    <Content Include="Views\Shared\_Login.ascx" />
+    <Content Include="Views\Truck\Mobile\Index.aspx" />
+    <Content Include="Views\Truck\TruckNotFound.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\scripts\jquery\jquery-1.4.1.js" />
+    <Content Include="Content\scripts\jquery\jquery-1.4.1.min.js" />
+    <Content Include="Content\scripts\jquery\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Content\scripts\jquery\jquery.validate.js" />
+    <Content Include="Content\scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Content\scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MaterPage1.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTOS\Data.csproj">
+      <Project>{11296C7E-93A9-4270-ACE4-E55A2BDEE07F}</Project>
+      <Name>Data %28Data\Data%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{5B1E4A8A-F759-42D9-8EBE-B06FD26CE3CC}</Project>
+      <Name>Infrastructure %28Infrastructure\Infrastructure%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{44B78D66-3C8E-4040-8349-00880149985D}</Project>
+      <Name>Logging %28Logging\Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHibernateLayer\NHibernateLayer.csproj">
+      <Project>{64D738E2-4F87-4990-9E99-D5AE522FB8BC}</Project>
+      <Name>NHibernateLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Mobile.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Devices\mobile.browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Mobile1.master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62049</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/TruckTracker</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
